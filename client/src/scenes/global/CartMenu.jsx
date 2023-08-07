@@ -49,11 +49,11 @@ const CartMenu = () => {
                     padding="30px" overflow="auto" height="30%">
                     {/* HEADER */}
                     <FlexBox mb="15px">
-                        <Typography variant="h3">SHOPPING BAG ({cart.lenght})</Typography>
+                        <Typography variant="h3">SHOPPING BAG ({cart.length})</Typography>
                         <IconButton onClick={() => dispatch(setIsCartOpen({}))}>
                             <CloseIcon />
                         </IconButton>
-                    </FlexBox>\
+                    </FlexBox>
                     {/* CART LIST */}
                     <Box>
                         {cart.map((item) => (
@@ -128,7 +128,7 @@ const CartMenu = () => {
                                 dispatch(setIsCartOpen({}));
                             }}
                         >
-                            MENU
+                            CHECKOUT
                         </Button>
                     </Box>
                 </Box>
