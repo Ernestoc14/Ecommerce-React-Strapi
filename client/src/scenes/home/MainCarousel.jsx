@@ -13,11 +13,11 @@ const importAll = (r) =>
     }, {});
 
 const heroTextureImports = importAll(
-    require.context("../../assets", false, /\.(png | jpe?g | svg)$/)
+    require.context("../../assets", false, /\.(png|jpe?g|svg)$/)
 );
 
 const MainCarousel = () => {
-    const isNonMobile = useMediaQuery("(min-width:600px");
+    const isNonMobile = useMediaQuery("(min-width:600px)");
 
     return (
         <Carousel
@@ -65,7 +65,7 @@ const MainCarousel = () => {
                             width: "100%",
                             height: "700px",
                             objectFit: "cover",
-                            backgroundAttachment: "fixed"
+                            backgroundAttachment: "fixed",
                         }}
                     />
                     <Box
@@ -73,7 +73,7 @@ const MainCarousel = () => {
                         padding="20px"
                         borderRadius="1px"
                         textAlign="left"
-                        backgroundColor="rbg(0, 0, 0, 0.4)"
+                        backgroundColor="rgb(0, 0, 0, 0.4)"
                         position="absolute"
                         top="46%"
                         left={isNonMobile ? "10%" : "0"}
@@ -81,7 +81,7 @@ const MainCarousel = () => {
                         margin={isNonMobile ? undefined : "0 auto"}
                         maxWidth={isNonMobile ? undefined : "240px"}
                     >
-                        <Typography color={shades.secondary[200]}>--NEW ITEMS</Typography>
+                        <Typography color={shades.secondary[200]}>-- NEW ITEMS</Typography>
                         <Typography variant="h1">Summer Sale</Typography>
                         <Typography
                             fontWeight="bold"
