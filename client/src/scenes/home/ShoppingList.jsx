@@ -58,6 +58,19 @@ const ShoppingList = () => {
                 <Tab label="New Arrivals" value="new-arrivals" />
                 <Tab label="Best Sellers" value="best-sellers" />
             </Tabs>
+            <Box 
+                margin="0 auto"
+                display="grid"
+                gridTemplateColumns="repeat(auto-fit, 250px)"
+                justifyContent="space-around"
+                rowGap="20px"
+                columnGap="1.33%"
+            >
+                {value === "all" && items.map((item) => (
+                    // 2 hr 10 min
+                    <Item item={item} key={`${item.name}-${item.id}`} />
+                ))}
+            </Box>
         </Box>
     )
 }
