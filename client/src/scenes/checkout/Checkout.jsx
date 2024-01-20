@@ -48,7 +48,7 @@ const checkoutSchema = [
       firstName: yup.string().when("isSameAddress", {
         is: false, 
         then: yup.string().required("required"),
-      })
+      }),
       lastName: yup.string().required("required"),
       country: yup.string().required("required"),
       street1: yup.string().required("required"),
