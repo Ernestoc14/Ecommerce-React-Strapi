@@ -1,9 +1,10 @@
-// import { useSelector } from 'react-redux';
-import { Box, Stepper, Step, StepLabel } from "@mui/material"
+import { useSelector } from 'react-redux';
+import { Box, Butoon, Stepper, Step, StepLabel } from "@mui/material"
 import { Formik } from 'formik';
 import { useState } from 'react';
 import * as yup from "yup"
-// import { shades } from '../../theme';
+import Shipping from './Shipping';
+import { shades } from '../../theme';
 
 const initialValues = {
   billingAddress: {
@@ -46,32 +47,32 @@ const checkoutSchema = [
     shippingAddress: yup.object().shape({
       isSameAddress: yup.boolean(),
       firstName: yup.string().when("isSameAddress", {
-        is: false, 
+        is: false,
         then: yup.string().required("required"),
       }),
       lastName: yup.string().when("isSameAddress", {
-        is: false, 
+        is: false,
         then: yup.string().required("required"),
       }),
       country: yup.string().when("isSameAddress", {
-        is: false, 
+        is: false,
         then: yup.string().required("required"),
       }),
       street1: yup.string().when("isSameAddress", {
-        is: false, 
+        is: false,
         then: yup.string().required("required"),
       }),
       street2: yup.string(),
       city: yup.string().when("isSameAddress", {
-        is: false, 
+        is: false,
         then: yup.string().required("required"),
       }),
       state: yup.string().when("isSameAddress", {
-        is: false, 
+        is: false,
         then: yup.string().required("required"),
       }),
       zipCode: yup.string().when("isSameAddress", {
-        is: false, 
+        is: false,
         then: yup.string().required("required"),
       }),
     }),
@@ -85,17 +86,17 @@ const checkoutSchema = [
 
 const Checkout = () => {
   const [activeStep, setActiveStep] = useState(0)
-  // const cart = useSelector((state) => state.cart.cart)
-  // const isFirstStep = activeStep === 0
-  // const isSecondStep = activeStep === 1
+  const cart = useSelector((state) => state.cart.cart)
+  const isFirstStep = activeStep === 0
+  const isSecondStep = activeStep === 1
 
   const handleFormSubmit = async (value, actions) => {
     setActiveStep(activeStep + 1)
   }
 
-  // async function makePayment(values) {
+  async function makePayment(values) {
 
-  // }
+  }
   return <Box>
     <Stepper activeStep={activeStep} sx={{ m: "20px 0" }}>
       <Step>
@@ -110,7 +111,30 @@ const Checkout = () => {
         onSubmit={handleFormSubmit}
         initialValues={initialValues}
         validationSchema={checkoutSchema[activeStep]}
-      ></Formik>
+      >
+        {({
+          values,
+          errors,
+          touched,
+          handleBlur,
+          handleChange,
+          handleSubmit,
+          setFieldValue
+        }) => (
+          <form onSubmit={handleSubmit}>
+            {isFirst && (
+              <Shipping
+                values={values}
+                errors={errors}
+                touched={touched}
+                handleBlur={handleBlur}
+                handleChange={handleChange}
+                setFieldValue={setFieldValue}
+              />
+            )}
+          </form>
+        )}
+      </Formik>
     </Box>
   </Box>
 }
