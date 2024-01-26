@@ -8,5 +8,14 @@ const Shipping = (values,
   handleChange,
   setFieldValue,
 ) => {
-
+  return(
+    <Box>
+      {/* BILLING FORM */}
+      <Box>
+        <Typography>
+          Billing Information
+        </Typography>
+      </Box>
+    </Box>
+  )
 }
