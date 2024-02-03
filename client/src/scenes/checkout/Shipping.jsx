@@ -8,13 +8,38 @@ const Shipping = (values,
   handleChange,
   setFieldValue,
 ) => {
-  return(
+  return (
     <Box>
       {/* BILLING FORM */}
       <Box>
         <Typography>
           Billing Information
         </Typography>
+        <AddressForm
+          type="billingAddress"
+          value={values.billingAddress}
+          errors={errors}
+          touched={touched}
+          handleBlur={handleBlur}
+          handleChange={handleChange}
+        />
+      </Box>
+
+      <Box mb='20px'>
+        <FormControlLabel
+          label="Shipping Address is the same as Billing Address"
+          control={
+            <Checkbox
+              defaultChecked
+              value={values.shippingAddress.isSameAddress}
+              onChange={() =>
+                setFieldValue(
+                  "shippingAddress.isSameAddress",
+                  !values.shippingAddress.isSameAddress
+                )}
+            />
+          }
+        />
       </Box>
     </Box>
   )
