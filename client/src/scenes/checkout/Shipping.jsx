@@ -41,6 +41,15 @@ const Shipping = (values,
           }
         />
       </Box>
+
+      {/* SHIPPING FORM */}
+      {!values.shippingAddress.isSameAddress && (
+        <Box>
+          <Typography sx={{ mb: "15px" }} fontSize="18px">
+            Billing Information
+          </Typography>
+
+        </Box>}
     </Box>
   )
 }
