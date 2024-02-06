@@ -3,7 +3,7 @@ import { getIn } from "formik"
 
 const AddressForm = ({
   type,
-  value,
+  values,
   errors,
   touched,
   handleBlur,
@@ -40,8 +40,47 @@ const AddressForm = ({
         value={values.firstName}
         onBlur={handleBlur}
         onChange={handleChange}
+        name={formattedName("firstName")}
+        error={formattedError("firstName")}
+        helperText={formattedHelper("firstName")}
+        sx={{ gridColumn: "span 2" }}
       />
-
+      <TextField
+        fullWidth
+        label="Last Name"
+        type="text"
+        value={values.lastName}
+        onBlur={handleBlur}
+        onChange={handleChange}
+        name={formattedName("lastName")}
+        error={formattedError("lastName")}
+        helperText={formattedHelper("lastName")}
+        sx={{ gridColumn: "span 2" }}
+      />
+      <TextField
+        fullWidth
+        label="Country"
+        type="text"
+        value={values.country}
+        onBlur={handleBlur}
+        onChange={handleChange}
+        name={formattedName("country")}
+        error={formattedError("country")}
+        helperText={formattedHelper("country")}
+        sx={{ gridColumn: "span 2" }}
+      />
+      <TextField
+        fullWidth
+        label="Street Address"
+        type="text"
+        value={values.street1}
+        onBlur={handleBlur}
+        onChange={handleChange}
+        name={formattedName("street1")}
+        error={formattedError("street1")}
+        helperText={formattedHelper("street1")}
+        sx={{ gridColumn: "span 4" }}
+      />
     </Box>
   )
 }
