@@ -81,7 +81,6 @@ const checkoutSchema = [
     email: yup.string().required("required"),
     phoneNumber: yup.string().required("required")
   })
-  // 3 HR
 ]
 
 const Checkout = () => {
@@ -90,8 +89,22 @@ const Checkout = () => {
   const isFirstStep = activeStep === 0
   const isSecondStep = activeStep === 1
 
-  const handleFormSubmit = async (value, actions) => {
+  const handleFormSubmit = async (values, actions) => {
     setActiveStep(activeStep + 1)
+
+    //copies the billing address onto shipping address
+    if (isFirstStep && values.shippingAddress.isSameAddress) {
+      actions.setFieldValue("shippingAddress", {
+        ...values.billingAddress,
+        isSameAddress: true,
+      })
+    }
+
+    if (isSecondStep) {
+      makePayment(values);
+    }
+
+    actions.setTouched({})
   }
 
   async function makePayment(values) {
