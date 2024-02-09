@@ -4,6 +4,7 @@ import { Formik } from 'formik';
 import { useState } from 'react';
 import * as yup from "yup"
 import Shipping from './Shipping';
+import Payment from './Payment';
 import { shades } from '../../theme';
 
 const initialValues = {
@@ -137,6 +138,16 @@ const Checkout = () => {
           <form onSubmit={handleSubmit}>
             {isFirstStep && (
               <Shipping
+                values={values}
+                errors={errors}
+                touched={touched}
+                handleBlur={handleBlur}
+                handleChange={handleChange}
+                setFieldValue={setFieldValue}
+              />
+            )}
+            {isSecondStep && (
+              <Payment
                 values={values}
                 errors={errors}
                 touched={touched}
