@@ -48,6 +48,11 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
 
       // return the session id
       return { id: session.id };
-    } catch (error) {}
+    } catch (error) {
+      ctx.response.status = 500;
+      return {
+        error: { message: "There was a problem creating the charge." },
+      };
+    }
   },
 }));
