@@ -62,3 +62,5 @@ const Shipping = ({
     </Box>
   )
 }
+
+export default Shipping
