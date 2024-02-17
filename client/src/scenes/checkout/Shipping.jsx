@@ -10,10 +10,10 @@ const Shipping = ({
   setFieldValue,
 }) => {
   return (
-    <Box>
+    <Box m="30px auto">
       {/* BILLING FORM */}
       <Box>
-        <Typography>
+        <Typography sx={{ mb: "15px" }} fontSize="18px">
           Billing Information
         </Typography>
         <AddressForm
@@ -32,7 +32,7 @@ const Shipping = ({
           control={
             <Checkbox
               defaultChecked
-              values={values.shippingAddress.isSameAddress}
+              value={values.shippingAddress.isSameAddress}
               onChange={() =>
                 setFieldValue(
                   "shippingAddress.isSameAddress",

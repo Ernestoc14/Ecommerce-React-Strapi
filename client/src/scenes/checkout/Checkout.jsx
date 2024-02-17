@@ -119,7 +119,7 @@ const Checkout = () => {
       products: cart.map(({ id, count }) => ({
         id,
         count,
-      }))
+      })),
     }
 
     const response = await fetch("http://localhost:1337/api/orders", {
@@ -135,7 +135,7 @@ const Checkout = () => {
     })
   }
   return (
-    <Box>
+    <Box width="80%" m="100px auto">
       <Stepper activeStep={activeStep} sx={{ m: "20px 0" }}>
         <Step>
           <StepLabel>Billing</StepLabel>
@@ -208,13 +208,15 @@ const Checkout = () => {
                     borderRadius: 0,
                     padding: "15px 40px"
                   }}
-                >{isFirstStep ? "Next" : "Place Order"}</Button>
+                >
+                  {isFirstStep ? "Next" : "Place Order"}
+                </Button>
               </Box>
             </form>
           )}
         </Formik>
       </Box>
-    </Box>
+    </Box >
   );
 }
 export default Checkout;
