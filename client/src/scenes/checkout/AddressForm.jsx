@@ -9,7 +9,7 @@ const AddressForm = ({
   handleBlur,
   handleChange,
 }) => {
-  const isNonMobile = useMediaQuery("(min-width;600px)");
+  const isNonMobile = useMediaQuery("(min-width:600px)");
 
   // these functions allow for better code readability
   const formattedName = (field) => `${type}.${field}`;
@@ -67,7 +67,7 @@ const AddressForm = ({
         name={formattedName("country")}
         error={formattedError("country")}
         helperText={formattedHelper("country")}
-        sx={{ gridColumn: "span 2" }}
+        sx={{ gridColumn: "span 4" }}
       />
       <TextField
         fullWidth
@@ -103,7 +103,7 @@ const AddressForm = ({
         name={formattedName("city")}
         error={formattedError("city")}
         helperText={formattedHelper("city")}
-        sx={{ gridColumn: "1fr" }}
+        sx={{ gridColumn: "span 2" }}
       />
       <TextField
         fullWidth
@@ -121,12 +121,12 @@ const AddressForm = ({
         fullWidth
         label="Zip Code"
         type="text"
-        value={values.zip}
+        value={values.zipCode}
         onBlur={handleBlur}
         onChange={handleChange}
-        name={formattedName("zip")}
-        error={formattedError("zip")}
-        helperText={formattedHelper("zip")}
+        name={formattedName("zipCode")}
+        error={formattedError("zipCode")}
+        helperText={formattedHelper("zipCode")}
         sx={{ gridColumn: "1fr" }}
       />
     </Box>
