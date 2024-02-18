@@ -186,7 +186,7 @@ const Checkout = () => {
                       borderRadius: 0,
                       padding: "15px 40px"
                     }}
-                    onClick={() => setActiveStep(activeStep - 1)}
+                    onClick={() => setActiveStep(activeStep + 1)}
                   >{isFirstStep ? "Next" : "Place Order"}</Button>
                 </Box>
               </form>
