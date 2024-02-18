@@ -63,7 +63,7 @@ const CartMenu = () => {
                                         <img
                                             alt={item?.name}
                                             width="123px"
-                                            height="164px"
+                                            height="130px"
                                             src={`http://localhost:1337${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
                                         />
                                     </Box>
@@ -112,7 +112,7 @@ const CartMenu = () => {
                     <Box m="20px 0">
                         <FlexBox m="20px 0">
                             <Typography fontWeight="bold">SUBTOTAL</Typography>
-                            <Typography fontWeight="bold">{totalPrice}$</Typography>
+                            <Typography fontWeight="bold">${totalPrice.toFixed(2)}</Typography>
                         </FlexBox>
                         <Button
                             sx={{
@@ -121,7 +121,11 @@ const CartMenu = () => {
                                 borderRadius: 0,
                                 minWidth: "100%",
                                 padding: "20px 40px",
-                                m: "20px 0"
+                                m: "20px 0",
+                                "&:hover": {
+                                    color: shades.primary[400],
+                                    backgroundColor: shades.neutral[300]
+                                }
                             }}
                             onClick={() => {
                                 navigate("/checkout");
