@@ -59,54 +59,56 @@ const ItemDetails = () => {
         </Box>
         {/* ACTIONS */}
         <Box flex="1 1 50%" mb="40px">
-          <Box>Home / Item</Box>
-          <Box>Prev Next</Box>
-        </Box>
-
-        <Box m="65px 0 25px 0">
-          <Typography variant="h3">{item?.attributes?.name}</Typography>
-          <Typography>{item?.attributes?.price}</Typography>
-          <Typography sx={{ mt: "20px" }}>
-            {item?.attributes?.longDescription}
-          </Typography>
-        </Box>
-        {/* COUNT AND BUTTON */}
-        <Box display="flex" alignItems="center" minHeight="50px">
-          <Box
-            display="flex"
-            alignItems="center"
-            border={`1.5px solid ${shades.neutral[300]}`}
-            mr="20px"
-            p="2px 5px"
-          >
-            <IconButton onClick={() => setCount(Math.max(count - 1, 1))}>
-              <RemoveIcon />
-            </IconButton>
-            <Typography sx={{ p: "0 5px" }}>{count}</Typography>
-            <IconButton onClick={() => setCount(count + 1)}>
-              <AddIcon />
-            </IconButton>
+          <Box display="flex" justifyContent="space-between">
+            <Box>Home / Item</Box>
+            <Box>Prev Next</Box>
           </Box>
-          <Button
-            sx={{
-              backgroundColor: "#222222",
-              color: "white",
-              borderRadius: "0",
-              minWidth: "150px",
-              padding: "10px 40px",
-            }}
-            onClick={() => dispatch(addToCart({ item: { ...item, count } }))}
-          >
-            ADD TO CART
-          </Button>
-        </Box>
 
-        <Box>
-          <Box m="20px 0 5px 0" display="flex">
-            <FavoriteBorderOutlinedIcon />
-            <Typography sx={{ ml: "5px" }}>ADD TO WISHLIST</Typography>
+          <Box m="65px 0 25px 0">
+            <Typography variant="h3">{item?.attributes?.name}</Typography>
+            <Typography>{item?.attributes?.price}</Typography>
+            <Typography sx={{ mt: "20px" }}>
+              {item?.attributes?.longDescription}
+            </Typography>
           </Box>
-          <Typography>CATEGORIES: {item?.attributes?.category}</Typography>
+          {/* COUNT AND BUTTON */}
+          <Box display="flex" alignItems="center" minHeight="50px">
+            <Box
+              display="flex"
+              alignItems="center"
+              border={`1.5px solid ${shades.neutral[300]}`}
+              mr="20px"
+              p="2px 5px"
+            >
+              <IconButton onClick={() => setCount(Math.max(count - 1, 1))}>
+                <RemoveIcon />
+              </IconButton>
+              <Typography sx={{ p: "0 5px" }}>{count}</Typography>
+              <IconButton onClick={() => setCount(count + 1)}>
+                <AddIcon />
+              </IconButton>
+            </Box>
+            <Button
+              sx={{
+                backgroundColor: "#222222",
+                color: "white",
+                borderRadius: "0",
+                minWidth: "150px",
+                padding: "10px 40px",
+              }}
+              onClick={() => dispatch(addToCart({ item: { ...item, count } }))}
+            >
+              ADD TO CART
+            </Button>
+          </Box>
+
+          <Box>
+            <Box m="20px 0 5px 0" display="flex">
+              <FavoriteBorderOutlinedIcon />
+              <Typography sx={{ ml: "5px" }}>ADD TO WISHLIST</Typography>
+            </Box>
+            <Typography>CATEGORIES: {item?.attributes?.category}</Typography>
+          </Box>
         </Box>
       </Box>
       {/* INFORMATION */}
