@@ -36,7 +36,7 @@ const Item = ({ item, width }) => {
             >
                 <img
                     alt={item.name}
-                    width="300pz"
+                    width="300px"
                     height="400px"
                     src={`http://localhost:1337${url}`}
                     onClick={() => navigate(`/item/${item.id}`)}
@@ -71,7 +71,13 @@ const Item = ({ item, width }) => {
                             onClick={() => {
                                 dispatch(addToCart({ item: { ...item, count } }))
                             }}
-                            sx={{ backgroundColor: shades.primary[300], color:  "white" }}
+                            sx={{
+                                backgroundColor: shades.primary[300], color: "white",
+                                "&:hover": {
+                                    backgroundColor: shades.neutral[300],
+                                    color: "black"
+                                }
+                            }}
                         >
                             Add to Cart
                         </Button>
