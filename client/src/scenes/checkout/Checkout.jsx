@@ -181,7 +181,7 @@ const Checkout = () => {
                 />
               )}
               <Box display="flex" justifyContent="space-between" gap="50px">
-                {isSecondStep && (
+                {!isFirstStep && (
                   <Button
                     fullWidth
                     color='primary'
@@ -198,7 +198,7 @@ const Checkout = () => {
                 )}
                 <Button
                   fullWidth
-                  type='submit'
+                  type="submit"
                   color="primary"
                   variant="contained"
                   sx={{
@@ -208,7 +208,6 @@ const Checkout = () => {
                     borderRadius: 0,
                     padding: "15px 40px"
                   }}
-                  onClick={() => setActiveStep(activeStep + 1)}
                 >
                   {isFirstStep ? "Next" : "Place Order"}
                 </Button>
