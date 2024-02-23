@@ -1,5 +1,7 @@
+import { Box, Alert, AlertTitle } from "@mui/material"
+
 const Confirmation = () => {
-    return <div>Confirmation</div>
+    
 }
 
 export default Confirmation;
