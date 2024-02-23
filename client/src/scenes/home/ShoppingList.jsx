@@ -27,11 +27,11 @@ const ShoppingList = () => {
         getItems();
     }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
-    const topRatedItems = items.filter((item) => item.attributes.category === "top-rated")
+    const topRatedItems = items.filter((item) => item.attributes.category === "topRated")
 
-    const newArrivalsItems = items.filter((item) => item.attributes.category === "new-arrivals")
+    const newArrivalsItems = items.filter((item) => item.attributes.category === "newArrivals")
 
-    const bestSellersItems = items.filter((item) => item.attributes.category === "best-sellers")
+    const bestSellersItems = items.filter((item) => item.attributes.category === "bestSellers")
 
     return (
         <Box width="80%" margin="80px auto">
@@ -53,9 +53,9 @@ const ShoppingList = () => {
                 }}
             >
                 <Tab label="All" value="all" />
-                <Tab label="Top Rated" value="top-rated" />
-                <Tab label="New Arrivals" value="new-arrivals" />
-                <Tab label="Best Sellers" value="best-sellers" />
+                <Tab label="Top Rated" value="topRated" />
+                <Tab label="New Arrivals" value="newArrivals" />
+                <Tab label="Best Sellers" value="bestSellers" />
             </Tabs>
             <Box 
                 margin="0 auto"
