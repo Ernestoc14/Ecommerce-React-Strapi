@@ -1,6 +1,5 @@
 import { Box, Typography } from "@mui/material";
 import { useTheme } from "@mui/material";
-import { shades } from "../../theme";
 
 const Footer = () => {
   const {
@@ -21,13 +20,14 @@ const Footer = () => {
           <Typography
             variant="h4"
             fontWeight="bold"
+            fontSize={20}
             mb="30px"
-            color={shades.secondary[500]}
           >
-            ECOMMERCE
+            Clothes Shop
           </Typography>
           <div>
-            lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do
+            Explore curated collections of fashion forward pieces for every occasion.
+            Elevate your wardrobe with effortless sophistication, only a click away.
           </div>
         </Box>
         <Box>
@@ -55,7 +55,7 @@ const Footer = () => {
             Contact Us
           </Typography>
           <Typography mb="30px">50th NW Blvd, Washington DC. </Typography>
-          <Typography mb="30px">Email: Ecommerce@gmail.com</Typography>
+          <Typography mb="30px">Email: clothes@shop.com</Typography>
           <Typography mb="30px">(+507) 123-1234</Typography>
         </Box>
       </Box>

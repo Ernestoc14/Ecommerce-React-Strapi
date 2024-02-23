@@ -2,7 +2,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { Badge, Box, IconButton } from "@mui/material"
 import { PersonOutline, ShoppingBagOutlined, MenuOutlined, SearchOutlined } from "@mui/icons-material"
 import { useNavigate } from "react-router-dom";
-import { shades } from "../../theme"
 import { setIsCartOpen } from "../../state";
 
 const Navbar = () => {
@@ -16,7 +15,7 @@ const Navbar = () => {
             alignItems="center"
             width="100%"
             height="60px"
-            backgroundColor="rgba(255, 255, 255, 0.95)"
+            backgroundColor="rgba(255, 255, 255, 1)"
             color="black"
             position="fixed"
             top="0"
@@ -32,10 +31,19 @@ const Navbar = () => {
             >
                 <Box
                     onClick={() => navigate("/")}
-                    sx={{ '&:hover': { cursor: "pointer" } }}
-                    color={shades.secondary[500]}
+                    sx={{
+                        '&:hover': { cursor: "pointer" },
+                        fontWeight: 800,
+                        fontSize: 24
+                    }}
+                    style={{
+                        background: 'linear-gradient(to right, #FF00CC, #3333CC, #FF00CC)',
+                        WebkitBackgroundClip: 'text',
+                        backgroundClip: 'text',
+                        color: 'transparent',
+                    }}
                 >
-                    ECOMMER
+                    CLOTHES SHOP
                 </Box>
                 <Box
                     display="flex"
