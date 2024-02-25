@@ -49,7 +49,7 @@ const checkoutSchema = [
       zipCode: yup.string().required("required"),
     }),
     shippingAddress: yup.object().shape({
-      isSameAddress: yup.boolean(),
+      isSameAddress: yup.string(),
       firstName: yup.string().when("isSameAddress", {
         is: false,
         then: yup.string().required("required"),
