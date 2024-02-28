@@ -38,7 +38,7 @@ const Item = ({ item, width }) => {
                     alt={item.name}
                     width="300px"
                     height="400px"
-                    src={`https://strapi-enbm.onrender.com/${url}`}
+                    src={`http://localhost:1337${url}`}
                     onClick={() => navigate(`/item/${item.id}`)}
                     style={{ cursor: 'pointer' }}
                 />
