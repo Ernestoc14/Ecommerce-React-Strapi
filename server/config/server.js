@@ -3,7 +3,7 @@ const cors = require('cors');
 const app = express();
 
 app.use(cors({
-  origin: ["https:ecommerce-react-strapi.vercel.app", "http://localhost:3000"],
+  origin: ["https:ecommerce-react-strapi.vercel.app", "https://ecommerce-react-strapi-4wizcz55u-ernestoc14.vercel.app", "http://localhost:3000" ]
 }))
 
 module.exports = ({ env }) => ({
