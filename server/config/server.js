@@ -1,11 +1,3 @@
-const express = require('express');
-const cors = require('cors');
-const app = express();
-
-app.use(cors({
-  origin: ["https:ecommerce-react-strapi.vercel.app", "https://ecommerce-react-strapi-4wizcz55u-ernestoc14.vercel.app", "http://localhost:3000" ]
-}))
-
 module.exports = ({ env }) => ({
   host: env('HOST', '0.0.0.0'),
   port: env.int('PORT', 1337),

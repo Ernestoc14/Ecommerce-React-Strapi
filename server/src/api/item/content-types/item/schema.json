@@ -4,7 +4,8 @@
   "info": {
     "singularName": "item",
     "pluralName": "items",
-    "displayName": "Item"
+    "displayName": "Item",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,10 +16,10 @@
       "type": "string"
     },
     "shortDescription": {
-      "type": "richtext"
+      "type": "blocks"
     },
     "longDescription": {
-      "type": "richtext"
+      "type": "blocks"
     },
     "price": {
       "type": "decimal"
@@ -37,7 +38,7 @@
       "type": "enumeration",
       "enum": [
         "newArrivals",
-        "bestSellers",
+        "bestSellers ",
         "topRated"
       ]
     }
